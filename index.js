@@ -1,18 +1,20 @@
 var express = require("express");
 var router = express.Router();
 const dotenv = require("dotenv").config();
-const connectDB = require("./mongo")
+const connectDB = require("./mongo");
 const PORT = process.env.PORT || 5000;
+const cors = require("cors");
 
-connectDB()
+connectDB();
 var app = express();
 
+//enable cors
+app.use(cors());
+app.options("*", cors());
 
 //This lets me send raw JSON
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
-
-
 
 /* GET home page. */
 app.get("/", (req, res) => {

@@ -1,27 +1,26 @@
 const mongoose = require("mongoose");
 
- //relate the ticket to user's object ID
+//relate the ticket to user's object ID
 const ticketSchema = mongoose.Schema(
   {
     user: {
       type: mongoose.Schema.Types.ObjectId,
       required: true,
-      ref: "User"
+      ref: "User",
     },
     category: {
       type: String,
       required: [true, "Select a category"],
-      enum: ["Billing", "UI", "Character Stuck", "Item Recovery", "Other"]
+      enum: ["Billing", "UI", "Bug", "Other"],
     },
     description: {
       type: String,
       require: [true, "Please enter a description of the issue"],
-      
     },
-     status: {
+    status: {
       type: String,
       require: true,
-      enum: ["new", "open", "closed" ],
+      enum: ["new", "open", "closed"],
       default: "new",
     },
   },
