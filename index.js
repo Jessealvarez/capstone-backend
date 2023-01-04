@@ -9,7 +9,7 @@ connectDB();
 var app = express();
 
 //enable cors
-app.use(cors());
+app.use(cors({origin:process.env.CORS_ORIGIN}));
 app.options("*", cors());
 
 //This lets me send raw JSON

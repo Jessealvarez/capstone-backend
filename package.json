@@ -3,8 +3,8 @@
   "version": "0.0.0",
   "private": true,
   "scripts": {
-    "start": "REACT_APP_AXIOS='production' react-scripts start",
-    "dev": "REACT_APP_AXIOS='development' react-scripts start"
+    "start": "react-scripts start",
+    "dev": "react-scripts start"
   },
   "dependencies": {
     "bcryptjs": "^2.4.3",
